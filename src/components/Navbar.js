@@ -141,6 +141,9 @@ function Navbar() {
             <Link to="/" className="nav-link">
               <a>Home</a>
             </Link>
+            <Link to="/discover" className="nav-link">
+              <a><i className="fi fi-rr-search"></i> Discover</a>
+            </Link>
             <ChatIcon />
             {user.admin ? (
               <Link to="/admin" className="nav-link">

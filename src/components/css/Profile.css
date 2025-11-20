@@ -321,3 +321,15 @@
     min-width: auto;
   }
 }
+
+
+/* Enhanced Profile Sections */
+.enhanced-sections {
+  margin-bottom: 30px;
+}
+
+.profile-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}

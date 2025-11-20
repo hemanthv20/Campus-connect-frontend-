@@ -7,6 +7,11 @@ import FollowButton from './FollowButton';
 import FollowStats from './FollowStats';
 import FollowersList from './FollowersList';
 import FollowingList from './FollowingList';
+import SkillsSection from './profile/SkillsSection';
+import InterestsSection from './profile/InterestsSection';
+import GoalsSection from './profile/GoalsSection';
+import ProjectsSection from './profile/ProjectsSection';
+import ExperienceSection from './profile/ExperienceSection';
 import './css/Profile.css';
 
 function Profile() {
@@ -221,6 +226,34 @@ function Profile() {
       </div>
 
       <div className="profile-content">
+        {/* Enhanced Profile Sections */}
+        <div className="enhanced-sections">
+          <SkillsSection 
+            userId={profileUser.user_id} 
+            isOwnProfile={currentUser.user_id === profileUser.user_id} 
+          />
+          
+          <InterestsSection 
+            userId={profileUser.user_id} 
+            isOwnProfile={currentUser.user_id === profileUser.user_id} 
+          />
+          
+          <GoalsSection 
+            userId={profileUser.user_id} 
+            isOwnProfile={currentUser.user_id === profileUser.user_id} 
+          />
+          
+          <ProjectsSection 
+            userId={profileUser.user_id} 
+            isOwnProfile={currentUser.user_id === profileUser.user_id} 
+          />
+          
+          <ExperienceSection 
+            userId={profileUser.user_id} 
+            isOwnProfile={currentUser.user_id === profileUser.user_id} 
+          />
+        </div>
+        
         <div className="posts-section">
           <h2>Posts ({userPosts.length})</h2>
           {userPosts.length === 0 ? (

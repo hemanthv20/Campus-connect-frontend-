@@ -13,6 +13,7 @@ import Navbar from './components/Navbar.js';
 import Profile from './components/Profile.js';
 import ChatList from './components/ChatList.js';
 import ChatWindow from './components/ChatWindow.js';
+import Discover from './components/Discover.js';
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path='/profile/:username' element={<Profile />} />
                 <Route path='/chat' element={<ChatList />} />
                 <Route path='/chat/:chatId' element={<ChatWindow />} />
+                <Route path='/discover' element={<Discover />} />
             </Routes>
         </Router>
     )
