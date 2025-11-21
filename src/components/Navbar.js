@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ChatIcon from "./ChatIcon";
+import { API_BASE_URL } from "../config/api";
 import "./css/Navbar.css";
 
 function Navbar() {
@@ -24,7 +25,7 @@ function Navbar() {
     try {
       // FIXED: Removed spaces in query parameter
       const response = await fetch(
-        `http://localhost:8081/users/search/${searchTerm}?gender=${genderFilter}`
+        `${API_BASE_URL}/users/search/${searchTerm}?gender=${genderFilter}`
       );
       if (response.status === 200) {
         const data = await response.json();
@@ -45,7 +46,7 @@ function Navbar() {
       try {
         // FIXED: Removed spaces in query parameter
         const response = await fetch(
-          `http://localhost:8081/users/autocomplete/${searchTerm}?gender=${genderFilter}`
+          `${API_BASE_URL}/users/autocomplete/${searchTerm}?gender=${genderFilter}`
         );
         if (response.ok) {
           const data = await response.json();
