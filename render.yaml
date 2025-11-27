@@ -1,0 +1,28 @@
+# Render deployment configuration for frontend
+services:
+  - type: web
+    name: campusconnect-frontend
+    env: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://your-backend-domain.onrender.com
+      - key: REACT_APP_FIREBASE_API_KEY
+        value: AIzaSyDpBQ2HrCURYsKvqTKQnpO_TiJjb956pOI
+      - key: REACT_APP_FIREBASE_AUTH_DOMAIN
+        value: campusconnect-10901.firebaseapp.com
+      - key: REACT_APP_FIREBASE_PROJECT_ID
+        value: campusconnect-10901
+      - key: REACT_APP_FIREBASE_STORAGE_BUCKET
+        value: campusconnect-10901.appspot.com
+      - key: REACT_APP_FIREBASE_MESSAGING_SENDER_ID
+        value: 1076337721495
+      - key: REACT_APP_FIREBASE_APP_ID
+        value: 1:1076337721495:web:1fe749ff4f6fd1f62ea9d2
+      - key: REACT_APP_FIREBASE_MEASUREMENT_ID
+        value: G-219N5ZL046
+      - key: REACT_APP_APP_NAME
+        value: CampusConnect
+      - key: REACT_APP_VERSION
+        value: 1.0.0
