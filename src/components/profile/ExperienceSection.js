@@ -23,7 +23,7 @@ function ExperienceSection({ userId, isOwnProfile }) {
 
   const loadExperiences = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/profile/${userId}/experience`);
+      const response = await axios.get(`${API_BASE_URL}/api/profile/${userId}/experiences`);
       setExperiences(response.data);
     } catch (error) {
       console.error('Error loading experiences:', error);
@@ -36,11 +36,12 @@ function ExperienceSection({ userId, isOwnProfile }) {
     if (!formData.title || !formData.companyOrganization) return;
     
     try {
-      await axios.post(`${API_BASE_URL}/api/profile/${userId}/experience`, formData);
+      await axios.post(`${API_BASE_URL}/api/profile/${userId}/experiences`, formData);
       loadExperiences();
       setShowAddModal(false);
       resetForm();
     } catch (error) {
+      console.error('Error adding experience:', error);
       alert('Failed to add experience');
     }
   };
@@ -49,9 +50,10 @@ function ExperienceSection({ userId, isOwnProfile }) {
     if (!window.confirm('Delete this experience?')) return;
     
     try {
-      await axios.delete(`${API_BASE_URL}/api/profile/experience/${experienceId}`);
+      await axios.delete(`${API_BASE_URL}/api/profile/experiences/${experienceId}`);
       loadExperiences();
     } catch (error) {
+      console.error('Error deleting experience:', error);
       alert('Failed to delete experience');
     }
   };
