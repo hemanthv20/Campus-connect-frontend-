@@ -33,7 +33,7 @@ function ExperienceSection({ userId, isOwnProfile }) {
   };
 
   const handleAddExperience = async () => {
-    if (!formData.title || !formData.company) return;
+    if (!formData.title || !formData.companyOrganization) return;
     
     try {
       await axios.post(`${API_BASE_URL}/api/profile/${userId}/experience`, formData);
